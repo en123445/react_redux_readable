@@ -133,8 +133,8 @@ app.use((req, res, next) => {
 app.get('/categories', (req, res) => {
     categories.getAll(req.token)
         .then(
-            (data) =>res.set('Access-Control-Allow-Origin', ALLOWED_ORIGINS),
-            (data) =>res.set('Access-Control-Allow-Credentials', 'true'),
+            res.set('Access-Control-Allow-Origin', ALLOWED_ORIGINS),
+            res.set('Access-Control-Allow-Credentials', 'true'),
             (data) => res.send(data),
             (error) => {
                 console.error(error)
